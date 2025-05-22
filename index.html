@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adtitude Media</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="logo.png" alt="Adtitude Logo" class="logo" />
+      <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    </div>
+    <nav id="sidebar">
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#book">Book</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Performance Marketing. Simplified.</h1>
+      <p>Plug-and-play ad engine for D2C brands. Launch in 7 days. Cancel anytime.</p>
+      <div class="cta-buttons">
+        <button onclick="window.location.href='#pricing'">See Plans</button>
+        <button onclick="window.location.href='https://calendly.com/growth-adtitudemedia'">Book Strategy Call</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Adtitude Media. All rights reserved.</p>
+    <p><a href="mailto:growth@adtitudemedia.com">growth@adtitudemedia.com</a></p>
+  </footer>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
