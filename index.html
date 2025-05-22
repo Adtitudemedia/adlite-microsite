@@ -1,81 +1,400 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdLite by Adtitude Media</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adtitude Flex – Performance Marketing. Simplified.</title>
+<meta content="Adtitude Flex is a plug-and-play ad engine for D2C brands." name="description"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
+<style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+    .navbar a {
+      font-weight: 600;
+      color: #6C4FF7;
+      margin-left: 20px;
+    }
+    header {
+      background: linear-gradient(135deg, #110D28, #3b217d);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+    header p {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      background: #7C4DFF;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      color: #6C4FF7;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+    .card img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+    .faq-item strong {
+      display: block;
+      cursor: pointer;
+      font-size: 18px;
+      color: #6C4FF7;
+    }
+    .faq-item p {
+      display: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .faq-item p.show {
+      display: block;
+    }
+    .cta-section {
+      background-color: #6C4FF7;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta-section iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      padding: 40px 20px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 14px;
+      font-size: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    @media (max-width: 600px) {
+      .cta-buttons a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+</style>
 </head>
 <body>
-  <header class="header">
-    <img src="logo.png" alt="Adtitude Logo" class="logo" />
-    <nav class="navbar">
-      <div class="nav-scroll">
-        <a href="#how">How It Works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#why">Why Us</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#faqs">FAQs</a>
-        <a href="#book">Book</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Performance Marketing. Simplified.</h1>
-    <p>Plug-and-play ad engine for D2C brands. Launch in 7 days. Cancel anytime.</p>
-    <div class="hero-buttons">
-      <a href="#pricing" class="button">See Plans</a>
-      <a href="https://calendly.com/growth-adtitudemedia" class="button">Book Strategy Call</a>
-    </div>
-  </section>
-
-  <section id="testimonials" class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-slider">
-      <div class="testimonial-card">
-        <img src="bree.png" alt="Bree" />
-        <h3>Bree</h3>
-        <p>Collaborating with the team has been incredibly smooth. Their ability to align seamlessly on influencer strategy and execute with clarity and speed made our partnership effortless and impactful.</p>
-      </div>
-      <div class="testimonial-card">
-        <img src="emma.png" alt="Emma" />
-        <h3>Emma</h3>
-        <p>What I love about working with this team is the transparency and agility they bring. Their creative direction is sharp, their AI-led insights are spot on, and their focus on performance is exactly what modern marketing needs.</p>
-      </div>
-      <div class="testimonial-card">
-        <img src="sunny.jpg" alt="Sunny" />
-        <h3>Sunny</h3>
-        <p>AdLite helped us double ROAS in just weeks. The results spoke for themselves within the first month.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="faqs" class="faqs">
-    <h2>FAQs</h2>
-    <div class="faq-item">Is this a retainer agency?</div>
-    <div class="faq-item">What if I don’t have creatives?</div>
-    <div class="faq-item">Do I own everything?</div>
-    <div class="faq-item">Can I pause anytime?</div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 Adtitude Media. All rights reserved. | growth@adtitudemedia.com</p>
-    <a href="https://calendly.com/growth-adtitudemedia" class="cta-footer">Book a Call for a Free Account Audit</a>
+<nav class="navbar">
+<div><img alt="Adtitude Logo" src="logo.png" style="height:36px;"/></div>
+<div>
+<a href="#how">How It Works</a>
+<a href="#pricing">Pricing</a>
+<a href="#why">Why Us</a>
+<a href="#testimonials">Testimonials</a>
+<a href="#faq">FAQs</a>
+<a href="https://calendly.com/growth-adtitudemedia" target="_blank">Book</a>
+</div>
+</nav>
+<a class="whatsapp-float" href="https://wa.me/919819256423" target="_blank">💬</a>
+<header>
+<h1>Performance Marketing. Simplified.</h1>
+<p>Plug-and-play ad engine for D2C brands. Launch in 7 days. Cancel anytime.</p>
+<div class="cta-buttons">
+<a href="#pricing">See Plans</a>
+<a href="https://calendly.com/growth-adtitudemedia" target="_blank">Book Strategy Call</a>
+</div>
+</header><section id="how" style="padding: 80px 20px;">
+<section id="how" style="padding: 80px 20px;">
+<h2 class="section-title" data-aos="fade-up">How It Works</h2>
+<div class="timeline">
+<div class="step" data-aos="fade-up">
+<div class="circle">1</div>
+<div class="content">
+<h4>Discovery &amp; Strategy</h4>
+<p>We dive into your business, audience, and goals with a custom plan to fit your stage.</p>
+<ul>
+<li>Audit &amp; insights</li>
+<li>Platform strategy</li>
+<li>Budget mapping</li>
+</ul>
+</div>
+</div>
+<div class="step" data-aos="fade-up">
+<div class="circle">2</div>
+<div class="content">
+<h4>Creative &amp; Funnel Build</h4>
+<p>We craft compelling creatives and build funnels tailored to your audience.</p>
+<ul>
+<li>UGC + high-converting statics</li>
+<li>Full funnel mapping</li>
+<li>Creative test plan</li>
+</ul>
+</div>
+</div>
+<div class="step" data-aos="fade-up">
+<div class="circle">3</div>
+<div class="content">
+<h4>Campaign Launch</h4>
+<p>From setup to go-live, we launch across platforms with speed and clarity.</p>
+<ul>
+<li>Ad setup + QA</li>
+<li>Targeting strategy</li>
+<li>Influencer sync (if needed)</li>
+</ul>
+</div>
+</div>
+<div class="step" data-aos="fade-up">
+<div class="circle">4</div>
+<div class="content">
+<h4>Scale &amp; Optimize</h4>
+<p>Track CAC &amp; ROAS, test new ideas, and scale what works — transparently.</p>
+<ul>
+<li>Live dashboard</li>
+<li>A/B tests weekly</li>
+<li>Scaling systems</li>
+</ul>
+</div>
+</div>
+<div class="step" data-aos="fade-up">
+<div class="circle">5</div>
+<div class="content">
+<h4>Iterate &amp; Grow</h4>
+<p>We evolve as you grow. Always improving strategy, creatives, and spend efficiency.</p>
+<ul>
+<li>Monthly planning</li>
+<li>Creative refresh</li>
+<li>Cross-channel expansion</li>
+</ul>
+</div>
+</div>
+</div>
+<style>
+    .timeline {
+      display: grid;
+      gap: 40px;
+      padding-top: 40px;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .circle {
+      background: #6C4FF7;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .content ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+  </style>
+</section>
+</section><section id="pricing" style="padding: 80px 20px;">
+<h2 class="section-title">Pricing Plans</h2>
+<div class="grid">
+<div class="card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+<h3>Starter – $350/mo</h3>
+<p>For early-stage brands testing the waters.</p>
+<ul style="text-align:left; padding-left:20px;">
+<li>Ad Setup on Meta or Google</li>
+<li>2 Custom Creatives</li>
+<li>Basic Funnel Strategy</li>
+<li>Weekly Performance Reports</li>
+</ul>
+</div>
+<div class="card" style="position: relative; border: 2px solid #6C4FF7; box-shadow: 0 12px 24px rgba(108, 79, 247, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+<div style="position: absolute; top: -12px; right: -12px; background: #6C4FF7; color: white; font-size: 12px; font-weight: bold; padding: 6px 12px; border-radius: 20px;">Most Popular</div>
+<h3>Growth – $590/mo</h3>
+<p>For scaling brands that need performance insights &amp; creative velocity.</p>
+<ul style="text-align:left; padding-left:20px;">
+<li>Ad Setup on Meta + Google</li>
+<li>4 Conversion-Focused Creatives</li>
+<li>CAC Dashboard Access</li>
+<li>Monthly Strategy Syncs</li>
+</ul>
+</div>
+<div class="card" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+<h3>Max – $900/mo</h3>
+<p>For fast-growing brands needing performance + content + collaboration.</p>
+<ul style="text-align:left; padding-left:20px;">
+<li>Everything in Growth</li>
+<li>Influencer UGC Integration</li>
+<li>Slack Workspace Connect</li>
+<li>Custom Landing Page (LP)</li>
+</ul>
+</div>
+</div>
+<style>
+    #pricing .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+  </style>
+</section><section id="why" style="padding: 80px 20px;">
+<section id="why" style="padding: 80px 20px;">
+<h2 class="section-title" data-aos="fade-up">Why AdLite?</h2>
+<div class="grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:32px;">
+<div class="card" data-aos="fade-up"><h4>Launch in 7 Days</h4><p>Go from zero to live fast with our streamlined onboarding.</p></div>
+<div class="card" data-aos="fade-up"><h4>Real CAC &amp; ROAS Tracking</h4><p>Every dollar tracked with dashboards built for decisions.</p></div>
+<div class="card" data-aos="fade-up"><h4>No Lock-In, Ever</h4><p>Month-to-month flexibility. Stay because it works.</p></div>
+<div class="card" data-aos="fade-up"><h4>Plug-and-Play Setup</h4><p>You focus on the product. We run the ads.</p></div>
+<div class="card" data-aos="fade-up"><h4>Weekly Reporting + Dashboard</h4><p>Stay informed with clear weekly recaps and data access.</p></div>
+<div class="card" data-aos="fade-up"><h4>Cancel Anytime</h4><p>Pause, switch, or stop anytime. Your strategy, your rules.</p></div>
+</div>
+</section>
+</section><section id="testimonials" style="overflow-x: auto; padding: 80px 20px;">
+<h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+<div class="grid" style="display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;">
+<div class="card" data-aos="fade-right" style="min-width: 360px; max-width: 360px; scroll-snap-align: start; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border-radius: 12px;">
+<img alt="Bree" src="bree.png" style="border-radius: 50%; width: 64px; height: 64px;"/>
+<h4>Bree</h4>
+<p>Collaborating with the team has been incredibly smooth. Their ability to align seamlessly on influencer strategy and execute with clarity and speed made our partnership effortless and impactful.</p>
+</div>
+<div class="card" data-aos="fade-up" style="min-width: 360px; max-width: 360px; scroll-snap-align: start; padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); border-radius: 12px;">
+<img alt="Emma" src="emma.png" style="border-radius: 50%; width: 64px; height: 64px;"/>
+<h4>Emma</h4>
+<p>What I love about working with this team is the transparency and agility they bring. Their creative direction is sharp, their AI-led insights are spot on, and their focus on performance is exactly what modern marketing needs.</p>
+</div>
+<div class="card" data-aos="fade-up" style="min-width: 360px; max-width: 360px; scroll-snap-align: start;">
+<img alt="Sunny" src="https://randomuser.me/api/portraits/men/47.jpg" style="border-radius: 50%; width: 64px; height: 64px;"/>
+<h4>Sunny</h4>
+<p>AdLite helped us double down on what works. The results spoke for themselves within the first month.</p>
+</div>
+</div>
+</section><section id="faq" style="padding: 80px 20px;">
+<h2 class="section-title">FAQs</h2>
+<div class="faq-item" onclick="this.classList.toggle('active')">
+<strong>Is this a retainer agency?</strong>
+<p>No. AdLite is a fixed-price subscription service. You get clear costs and predictable results, without the hidden fees.</p>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('active')">
+<strong>What if I don’t have creatives?</strong>
+<p>Don't worry, creatives are included! We'll produce what you need to convert.</p>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('active')">
+<strong>Do I own everything?</strong>
+<p>Absolutely, 100%. Your ad accounts, your creatives – they're all yours.</p>
+</div>
+<div class="faq-item" onclick="this.classList.toggle('active')">
+<strong>Can I pause anytime?</strong>
+<p>Yes, you have full flexibility. It’s a month-to-month service, designed around your business.</p>
+</div>
+<div style="text-align: center; margin-top: 40px;">
+<p>Still have questions?</p>
+<a href="https://calendly.com/growth-adtitudemedia" style="background:#6C4FF7; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">Book a Call for a Free Account Audit</a>
+</div>
+<style>
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .faq-item:hover {
+      background: #f0f4ff;
+    }
+    .faq-item p {
+      display: none;
+      margin-top: 10px;
+      font-size: 16px;
+      color: #444;
+    }
+    .faq-item.active p {
+      display: block;
+    }
+  </style>
+</section>
+<footer class="footer">
+    © 2025 Adtitude Media. All rights reserved. | growth@adtitudemedia.com
   </footer>
-
-  <a href="https://wa.me/919819256423" class="whatsapp-float" target="_blank">💬</a>
-
-  <script>
-    // Auto-slide testimonials every 3 seconds
-    const slider = document.querySelector('.testimonial-slider');
-    let scrollAmount = 0;
-    setInterval(() => {
-      scrollAmount += slider.offsetWidth / 3;
-      if (scrollAmount >= slider.scrollWidth - slider.offsetWidth) scrollAmount = 0;
-      slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }, 3000);
-  </script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>AOS.init();</script>
 </body>
 </html>
