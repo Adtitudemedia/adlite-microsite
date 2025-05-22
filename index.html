@@ -1,93 +1,267 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AdLite by Adtitude</title>
-  <link rel="stylesheet" href="assets/style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adtitude Flex – Performance Marketing. Simplified.</title>
+  <meta name="description" content="Adtitude Flex is a plug-and-play ad engine for D2C brands." />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f9fafc;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+    }
+    .navbar a {
+      font-weight: 600;
+      color: #6C4FF7;
+      margin-left: 20px;
+    }
+    header {
+      background: linear-gradient(135deg, #110D28, #3b217d);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+    header p {
+      font-size: 20px;
+      margin-bottom: 32px;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons a {
+      background: #7C4DFF;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      color: #6C4FF7;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+    .card img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+    }
+    .faq-item strong {
+      display: block;
+      cursor: pointer;
+      font-size: 18px;
+      color: #6C4FF7;
+    }
+    .faq-item p {
+      display: none;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    .faq-item p.show {
+      display: block;
+    }
+    .cta-section {
+      background-color: #6C4FF7;
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .cta-section iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #999;
+      padding: 40px 20px;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 14px;
+      font-size: 24px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    @media (max-width: 600px) {
+      .cta-buttons a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <nav class="navbar">
-    <div class="logo">AdLite</div>
-    <ul class="nav-links">
-      <li><a href="#how">How It Works</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#why">Why AdLite</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#book">Book</a></li>
-    </ul>
+    <div><strong>Adtitude Flex</strong></div>
+    <div>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQs</a>
+      <a href="#book">Book</a>
+    </div>
   </nav>
 
-  <section class="hero" data-aos="fade-up">
-    <h1>Performance Marketing That Actually Performs.</h1>
-    <p>AdLite is your plug-and-play ad engine, built for D2C brands ready to scale. Launch in 7 days, track real ROAS, and stop wasting budget.</p>
-    <a href="#book" class="btn">Get Started →</a>
-  </section>
+  <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float">💬</a>
 
-  <section id="how" class="section" data-aos="fade-up">
-    <h2>How It Works</h2>
-    <div class="columns">
-      <div><h3>Setup</h3><p>We handle ad account, audience, and pixel setup in just 7 days.</p></div>
-      <div><h3>Creatives + Funnel</h3><p>We develop UGC-style or branded creatives and optimize your funnel.</p></div>
-      <div><h3>Track & Optimize</h3><p>Weekly CAC/ROAS dashboard for smart scaling decisions.</p></div>
+  <header>
+    <h1>Performance Marketing. Simplified.</h1>
+    <p>Plug-and-play ad engine for D2C brands. Launch in 7 days. Cancel anytime.</p>
+    <div class="cta-buttons">
+      <a href="#pricing">See Plans</a>
+      <a href="#book">Book Strategy Call</a>
     </div>
-  </section>
+  </header>
 
-  <section id="pricing" class="section" data-aos="fade-up">
-    <h2>Pricing Plans</h2>
-    <div class="pricing-cards">
+  <section id="pricing">
+    <h2 class="section-title">Pricing Plans</h2>
+    <div class="grid">
       <div class="card">
         <h3>Starter</h3>
-        <p>₹29K/mo</p>
-        <p>Meta or Google, 2 creatives, funnel setup.</p>
-        <a href="#book" class="btn">Book Your Strategy Call</a>
+        <p>₹29,000/mo</p>
+        <ul>
+          <li>Meta or Google Setup</li>
+          <li>2 Creatives</li>
+          <li>Basic Funnel</li>
+          <li>Weekly Reporting</li>
+        </ul>
       </div>
-      <div class="card recommended">
-        <h3>Growth</h3>
-        <p>₹49K/mo</p>
-        <p>Meta + Google, 4 creatives, CAC dashboard.</p>
-        <a href="#book" class="btn">Book Your Strategy Call</a>
+      <div class="card">
+        <h3>Growth (Recommended)</h3>
+        <p>₹49,000/mo</p>
+        <ul>
+          <li>Meta + Google Ads</li>
+          <li>4 Creatives</li>
+          <li>CAC Dashboard</li>
+          <li>Monthly Sync</li>
+        </ul>
       </div>
       <div class="card">
         <h3>Max</h3>
-        <p>₹75K/mo</p>
-        <p>Everything in Growth + UGC, Slack support, LP optimization.</p>
-        <a href="#book" class="btn">Book Your Strategy Call</a>
+        <p>₹75,000/mo</p>
+        <ul>
+          <li>All in Growth</li>
+          <li>Influencer UGC Sync</li>
+          <li>Slack Connect</li>
+          <li>Custom LP</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="why" class="section" data-aos="fade-up">
-    <h2>Why AdLite?</h2>
-    <ul>
-      <li>Launch in 7 Days</li>
-      <li>Real CAC & ROAS Tracking</li>
-      <li>No Lock-In, Ever</li>
-      <li>Plug-and-Play Setup</li>
-      <li>Weekly Reporting + Dashboard</li>
-      <li>Cancel Anytime</li>
-    </ul>
+  <section id="testimonials">
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="grid">
+      <div class="card" data-aos="fade-right">
+        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="Blake Anderson" />
+        <h4>Blake Anderson (Co-founder, AUS)</h4>
+        <p style="color: #f5a623;">★★★★★</p>
+        <p>“AdLite helped us move from scattered efforts to solid acquisition — we saw a 2.5x performance lift in just 4 weeks. Transparent, on-point and refreshingly proactive.”</p>
+      </div>
+      <div class="card" data-aos="fade-up">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Olivia Wilson" />
+        <h4>Olivia Wilson</h4>
+        <p style="color: #f5a623;">★★★★☆</p>
+        <p>“We scaled our D2C campaigns 2.3x in ROAS using AdLite. Seamless setup and great transparency.”</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Shawn Garcia" />
+        <h4>Shawn Garcia</h4>
+        <p style="color: #f5a623;">★★★★★</p>
+        <p>“The best performance team I’ve worked with. Their dashboard and weekly syncs gave us clarity.”</p>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Pedro Fernandes" />
+        <h4>Pedro Fernandes</h4>
+        <p style="color: #f5a623;">★★★★★</p>
+        <p>“They feel more like a partner than a vendor. Great creatives, even better results.”</p>
+      </div>
+    </div>
   </section>
 
-  <section id="testimonials" class="section" data-aos="fade-up">
-    <h2>Testimonials</h2>
-    <blockquote>“AdLite was a game-changer. Our ROAS jumped 2.3x in just 4 weeks.” — Priya M.</blockquote>
-    <blockquote>“AdLite's CAC dashboard helped us pitch investors with confidence.” — Jason R.</blockquote>
+  <section id="faq">
+    <h2 class="section-title">FAQs</h2>
+    <div class="faq-item">
+      <strong onclick="this.nextElementSibling.classList.toggle('show')">Is AdLite a typical agency?</strong>
+      <p>No. AdLite is a fixed-scope, plug-and-play execution model.</p>
+    </div>
+    <div class="faq-item">
+      <strong onclick="this.nextElementSibling.classList.toggle('show')">Do you include creatives?</strong>
+      <p>Yes, creative development is included in all plans.</p>
+    </div>
+    <div class="faq-item">
+      <strong onclick="this.nextElementSibling.classList.toggle('show')">Can I pause anytime?</strong>
+      <p>Absolutely. You’re not locked in. Pause or cancel with ease.</p>
+    </div>
   </section>
 
-  <section id="book" class="cta" data-aos="fade-up">
-    <h2>Ready to launch your first profitable campaign in just 7 days?</h2>
-    <a href="https://calendly.com/growth-adtitudemedia" class="btn">Book Your Free Strategy Call</a>
+  <section class="cta-section" id="book">
+    <h2>Let’s Launch Your Ads in 7 Days</h2>
+    <iframe src="https://calendly.com/growth-adtitudemedia" title="Calendly Booking"></iframe>
+    <a href="mailto:growth@adtitudemedia.com">Prefer Email? Contact Us</a>
   </section>
 
-  <a href="https://wa.me/919819256423" class="whatsapp-float" target="_blank">Chat on WhatsApp</a>
+  <footer class="footer">
+    © 2025 Adtitude Media. All rights reserved. | growth@adtitudemedia.com
+  </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
