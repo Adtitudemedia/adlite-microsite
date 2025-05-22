@@ -1,0 +1,63 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #333;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+}
+.btn {
+  padding: 10px 20px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+}
+.recommended {
+  border-color: #6c63ff;
+  background: #f0f0ff;
+}
+.cta {
+  background: #ececff;
+  padding: 50px 20px;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
