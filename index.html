@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Adlite – Performance Marketing. Simplified.</title>
-<meta content="Adlite is a plug-and-play ad engine for D2C brands." name="description"/>
+<title>Adtitude Flex – Performance Marketing. Simplified.</title>
+<meta content="Adtitude Flex is a plug-and-play ad engine for D2C brands." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
 <style>
@@ -205,12 +205,17 @@
         flex-direction: row; /* Keep logo and hamburger on same row */
         align-items: center;
       }
-      .navbar div {
-        /* This rule might conflict with the new flex-direction for .navbar. Let's adjust or remove if needed */
-        /* display: flex; */
-        /* flex-direction: column; */
-        /* gap: 8px; */
-      }
+      /* Removed the previous problematic media query rule for .navbar div */
+    }
+
+    /* Pricing card hover styles */
+    #pricing .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+    /* Enhanced hover for the dark "Most Popular" card */
+    #pricing .card[style*="background: #110D28"]:hover {
+        box-shadow: 0 16px 40px rgba(108, 79, 247, 0.3); /* A more vibrant shadow for the dark card on hover */
     }
 </style>
 </head>
@@ -351,11 +356,11 @@
 <li>Weekly Performance Reports</li>
 </ul>
 </div>
-<div class="card" style="position: relative; border: 2px solid #6C4FF7; box-shadow: 0 12px 24px rgba(108, 79, 247, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+<div class="card" style="position: relative; background: #110D28; color: white; box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
 <div style="position: absolute; top: -12px; right: -12px; background: #6C4FF7; color: white; font-size: 12px; font-weight: bold; padding: 6px 12px; border-radius: 20px;">Most Popular</div>
 <h3>Growth – $590/mo</h3>
 <p>For scaling brands that need performance insights &amp; creative velocity.</p>
-<ul style="text-align:left; padding-left:20px;">
+<ul style="text-align:left; padding-left:20px; color: white;">
 <li>Ad Setup on Meta + Google</li>
 <li>4 Conversion-Focused Creatives</li>
 <li>CAC Dashboard Access</li>
@@ -377,6 +382,9 @@
     #pricing .card:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+    }
+    #pricing .card[style*="background: #110D28"]:hover { /* Enhanced hover for the dark card */
+         box-shadow: 0 16px 40px rgba(108, 79, 247, 0.3); /* A more vibrant shadow for the dark card on hover */
     }
   </style>
 </section><section id="why" style="padding: 80px 20px;">
