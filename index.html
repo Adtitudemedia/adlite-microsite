@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Adtitude Flex – Performance Marketing. Simplified.</title>
-<meta content="Adtitude Flex is a plug-and-play ad engine for D2C brands." name="description"/>
+<title>Adlite – Performance Marketing. Simplified.</title>
+<meta content="Adlite is a plug-and-play ad engine for D2C brands." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -44,7 +44,33 @@
       color: white;
       padding: 100px 20px;
       text-align: center;
+      position: relative; /* Needed for absolute positioning of animation */
+      overflow: hidden; /* Hide overflowing animation */
     }
+    /* Hero Section Background Animation */
+    header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at top left, rgba(124, 77, 255, 0.2) 0%, transparent 30%),
+                    radial-gradient(circle at bottom right, rgba(255, 215, 0, 0.1) 0%, transparent 30%);
+        animation: subtlePulse 10s infinite alternate ease-in-out;
+        z-index: 0;
+    }
+
+    @keyframes subtlePulse {
+        0% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+        100% { transform: scale(1.05) rotate(5deg); opacity: 0.8; }
+    }
+    /* Ensure header content is above the animation */
+    header > * {
+        position: relative;
+        z-index: 1;
+    }
+
     header h1 {
       font-size: 42px;
       margin-bottom: 16px;
@@ -95,18 +121,39 @@
       border-radius: 50%;
       margin-bottom: 16px;
     }
-    .faq-item strong {
-      display: block;
+    .faq-item {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
       cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .faq-item:hover {
+      background: #f0f4ff;
+    }
+    .faq-item strong {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 18px;
       color: #6C4FF7;
+    }
+    .faq-item .faq-icon {
+        font-size: 24px;
+        transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon {
+        transform: rotate(45deg); /* Rotate to form an 'x' */
     }
     .faq-item p {
       display: none;
       font-size: 16px;
       margin-top: 10px;
+      color: #444;
     }
-    .faq-item p.show {
+    .faq-item.active p {
       display: block;
     }
     .cta-section {
@@ -285,6 +332,14 @@
       position: relative;
       overflow: hidden; /* Hide overflowing pseudo-elements if any */
     }
+    #services .service-card .service-icon {
+        font-size: 36px;
+        color: #FFD700; /* Yellowish color for icons */
+        margin-bottom: 15px;
+        display: block; /* Ensures it takes up full width for text-align */
+        text-align: center; /* Center the icon within its block */
+    }
+
     #services .service-card::before { /* For abstract background pattern */
         content: '';
         position: absolute;
@@ -305,11 +360,13 @@
       margin-top: 0;
       margin-bottom: 10px;
       color: #7C4DFF; /* Purple highlight for titles */
+      text-align: center; /* Center the title below the icon */
     }
     #services .service-card p {
       font-size: 15px;
       line-height: 1.6;
       color: rgba(255, 255, 255, 0.9);
+      text-align: left; /* Keep description text aligned left */
     }
     #services .service-card:hover {
       transform: translateY(-8px);
@@ -322,7 +379,7 @@
       color: white;
     }
 
-    /* New Performance Highlights Section Styles */
+    /* Performance Highlights Section Styles */
     .performance-highlights {
         display: flex;
         justify-content: space-around;
@@ -388,7 +445,7 @@
 
 <div class="whatsapp-container">
     <div id="whatsappPopup" class="whatsapp-popup">
-       Hi! Not sure where to start? Let’s figure it out together.
+        Hi ! I am Parth from Adtitude Media. Let's Connect.
     </div>
     <a class="whatsapp-float" href="https://wa.me/919819256423" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
@@ -426,26 +483,32 @@
     <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Your Growth Partner in Performance & Brand Building</p>
     <div class="grid">
         <div class="service-card" data-aos="fade-up">
+            <i class="fas fa-chart-line service-icon"></i>
             <h4>PERFORMANCE MARKETING</h4>
             <p>Maximize ROI with data-driven Meta & Google Ads strategies that deliver measurable results.</p>
         </div>
         <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <i class="fas fa-store service-icon"></i>
             <h4>MARKETPLACE & QUICK COMMERCE</h4>
             <p>Dominate Amazon, Flipkart, Zepto, Swiggy, Zomato & Meesho with full-spectrum PPC, catalog management & seller operations.</p>
         </div>
         <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <i class="fas fa-robot service-icon"></i>
             <h4>AUTOMATION</h4>
             <p>Streamline workflows with AI tools that reduce errors, save time, and optimize reporting.</p>
         </div>
         <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <i class="fas fa-share-alt service-icon"></i>
             <h4>SOCIAL MEDIA MARKETING</h4>
             <p>Build community engagement and brand loyalty through platform-specific growth campaigns.</p>
         </div>
         <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <i class="fas fa-handshake service-icon"></i>
             <h4>INFLUENCER MARKETING</h4>
             <p>Streamline workflows with AI tools that reduce errors, save time, and optimize reporting.</p>
         </div>
         <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+            <i class="fas fa-lightbulb service-icon"></i>
             <h4>BRAND BUILDING</h4>
             <p>Craft compelling narratives that position your brand for long-term growth across digital channels.</p>
         </div>
@@ -626,48 +689,25 @@
 </section><section id="faq" style="padding: 80px 20px;">
 <h2 class="section-title">FAQs</h2>
 <div class="faq-item" onclick="this.classList.toggle('active')">
-<strong>Is this a retainer agency?</strong>
+<strong>Is this a retainer agency? <span class="faq-icon">+</span></strong>
 <p>No. AdLite is a fixed-price subscription service. You get clear costs and predictable results, without the hidden fees.</p>
 </div>
 <div class="faq-item" onclick="this.classList.toggle('active')">
-<strong>What if I don’t have creatives?</strong>
+<strong>What if I don’t have creatives? <span class="faq-icon">+</span></strong>
 <p>Don't worry, creatives are included! We'll produce what you need to convert.</p>
 </div>
 <div class="faq-item" onclick="this.classList.toggle('active')">
-<strong>Do I own everything?</strong>
+<strong>Do I own everything? <span class="faq-icon">+</span></strong>
 <p>Absolutely, 100%. Your ad accounts, your creatives – they're all yours.</p>
 </div>
 <div class="faq-item" onclick="this.classList.toggle('active')">
-<strong>Can I pause anytime?</strong>
+<strong>Can I pause anytime? <span class="faq-icon">+</span></strong>
 <p>Yes, you have full flexibility. It’s a month-to-month service, designed around your business.</p>
 </div>
 <div style="text-align: center; margin-top: 40px;">
 <p>Still have questions?</p>
 <a href="https://calendly.com/growth-adtitudemedia" style="background:#6C4FF7; color:white; padding:10px 20px; border-radius:6px; text-decoration:none; font-weight:bold;">Book a Call for a Free Account Audit</a>
 </div>
-<style>
-    .faq-item {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .faq-item:hover {
-      background: #f0f4ff;
-    }
-    .faq-item p {
-      display: none;
-      margin-top: 10px;
-      font-size: 16px;
-      color: #444;
-    }
-    .faq-item.active p {
-      display: block;
-    }
-  </style>
 </section>
 <footer class="footer">
     © 2025 Adtitude Media. All rights reserved. | growth@adtitudemedia.com
