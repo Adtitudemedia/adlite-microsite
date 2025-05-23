@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -31,7 +30,10 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
-    .navbar a {
+    .navbar .nav-links { /* Added a class for the original nav links */
+      display: flex;
+    }
+    .navbar .nav-links a {
       font-weight: 600;
       color: #6C4FF7;
       margin-left: 20px;
@@ -137,90 +139,102 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       z-index: 1000;
     }
+
+    /* Hamburger Menu Styles */
+    .hamburger {
+      display: none; /* Hidden by default, shown on smaller screens */
+      font-size: 30px;
+      cursor: pointer;
+      color: #6C4FF7;
+      z-index: 1100; /* Ensure it's above other content */
+    }
+
+    .sidebar {
+      height: 100%;
+      width: 0; /* Hidden by default */
+      position: fixed;
+      z-index: 1050;
+      top: 0;
+      right: 0;
+      background-color: #fff;
+      overflow-x: hidden;
+      transition: 0.5s; /* Smooth transition */
+      padding-top: 60px;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    .sidebar a {
+      padding: 15px 25px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #333;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #f1f1f1;
+      color: #6C4FF7;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+      color: #999;
+    }
+
+    @media (max-width: 768px) { /* Adjust breakpoint as needed */
+      .navbar .nav-links {
+        display: none; /* Hide regular nav links on small screens */
+      }
+      .hamburger {
+        display: block; /* Show hamburger icon */
+      }
+    }
+
     @media (max-width: 600px) {
       .cta-buttons a {
         display: block;
         width: 100%;
         box-sizing: border-box;
       }
-    }
-  
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .navbar div {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-}
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 4px;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #6C4FF7;
-      display: block;
-    }
-    .sidebar {
-      display: none;
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 250px;
-      height: 100%;
-      background: #fff;
-      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      flex-direction: column;
-      gap: 20px;
-      z-index: 1001;
-    }
-    .sidebar a {
-      color: #6C4FF7;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 18px;
-    }
-    .sidebar.open {
-      display: flex;
-    }
-    @media (max-width: 768px) {
-      .navbar > div:not(.menu-toggle):not(:first-child) {
-        display: none;
+      .navbar {
+        flex-direction: row; /* Keep logo and hamburger on same row */
+        align-items: center;
       }
-      .menu-toggle {
-        display: flex;
+      .navbar div {
+        /* This rule might conflict with the new flex-direction for .navbar. Let's adjust or remove if needed */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* gap: 8px; */
       }
     }
-    </style>
+</style>
 </head>
 <body>
 <nav class="navbar">
 <div><img alt="Adtitude Logo" src="logo.png" style="height:36px;"/></div>
-
-
-<div class="menu-toggle" onclick="toggleSidebar()">
-<span></span>
-<span></span>
-<span></span>
-</div>
-<div class="sidebar" id="sidebar">
-<a href="#how">How It Works</a>
+<div class="nav-links"> <a href="#how">How It Works</a>
 <a href="#pricing">Pricing</a>
 <a href="#why">Why Us</a>
 <a href="#testimonials">Testimonials</a>
 <a href="#faq">FAQs</a>
 <a href="https://calendly.com/growth-adtitudemedia" target="_blank">Book</a>
 </div>
-</nav>
+<div class="hamburger" onclick="openNav()">&#9776;</div> </nav>
+
+<div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#how" onclick="closeNav()">How It Works</a>
+  <a href="#pricing" onclick="closeNav()">Pricing</a>
+  <a href="#why" onclick="closeNav()">Why Us</a>
+  <a href="#testimonials" onclick="closeNav()">Testimonials</a>
+  <a href="#faq" onclick="closeNav()">FAQs</a>
+  <a href="https://calendly.com/growth-adtitudemedia" target="_blank" onclick="closeNav()">Book</a>
+</div>
 <a class="whatsapp-float" href="https://wa.me/919819256423" target="_blank">💬</a>
 <header>
 <h1>Performance Marketing. Simplified.</h1>
@@ -446,11 +460,17 @@
     © 2025 Adtitude Media. All rights reserved. | growth@adtitudemedia.com
   </footer>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>AOS.init();</script>
 <script>
-function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  sidebar.classList.toggle('open');
-}
-</script></body>
+    AOS.init();
+
+    /* JavaScript for sidebar functionality */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px"; /* Adjust width as needed */
+    }
+
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
+</script>
+</body>
 </html>
