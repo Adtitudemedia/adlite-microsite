@@ -322,6 +322,44 @@
       color: white;
     }
 
+    /* New Performance Highlights Section Styles */
+    .performance-highlights {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start; /* Align items to the top to prevent text from pushing numbers */
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 60px; /* Space from CTA buttons */
+        padding-top: 40px; /* Padding for the top of this section */
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* Subtle separator line */
+    }
+    .highlight-item {
+        flex: 1 1 200px; /* Allows items to grow/shrink, with a base of 200px */
+        text-align: center;
+        color: white;
+    }
+    .highlight-item .number {
+        font-size: 48px; /* Large, bold number */
+        font-weight: 700;
+        color: #FFD700; /* Yellowish color as per image */
+        margin-bottom: 8px;
+    }
+    .highlight-item .description {
+        font-size: 16px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 768px) {
+        .performance-highlights {
+            flex-direction: column; /* Stack highlights on small screens */
+            align-items: center;
+        }
+        .highlight-item {
+            margin-bottom: 30px; /* Space between stacked items */
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -350,7 +388,7 @@
 
 <div class="whatsapp-container">
     <div id="whatsappPopup" class="whatsapp-popup">
-        Hi ! I am Parth from Adtitude Media. Let's Connect.
+       Hi! Not sure where to start? Let’s figure it out together.
     </div>
     <a class="whatsapp-float" href="https://wa.me/919819256423" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
@@ -361,6 +399,25 @@
 <div class="cta-buttons">
 <a href="#pricing">See Plans</a>
 <a href="https://calendly.com/growth-adtitudemedia" target="_blank">Book Strategy Call</a>
+</div>
+
+<div class="performance-highlights">
+    <div class="highlight-item" data-aos="fade-up" data-aos-delay="700">
+        <div class="number">500M+</div>
+        <div class="description">Trackable revenue generated for brands through paid media</div>
+    </div>
+    <div class="highlight-item" data-aos="fade-up" data-aos-delay="800">
+        <div class="number">5K+</div>
+        <div class="description">Ad creatives launched and tested across D2C brands</div>
+    </div>
+    <div class="highlight-item" data-aos="fade-up" data-aos-delay="900">
+        <div class="number">30K+</div>
+        <div class="description">Saved for clients on the products & models shoot</div>
+    </div>
+    <div class="highlight-item" data-aos="fade-up" data-aos-delay="1000">
+        <div class="number">500</div>
+        <div class="description">Influencers connected for clients across three countries</div>
+    </div>
 </div>
 </header>
 
