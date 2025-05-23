@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Adlite – Performance Marketing. Simplified.</title>
-<meta content="Adtlite is a plug-and-play ad engine for D2C brands." name="description"/>
+<title>Adtitude Flex – Performance Marketing. Simplified.</title>
+<meta content="Adtitude Flex is a plug-and-play ad engine for D2C brands." name="description"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -31,7 +31,7 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
       z-index: 1000;
     }
-    .navbar .nav-links { /* Added a class for the original nav links */
+    .navbar .nav-links {
       display: flex;
     }
     .navbar .nav-links a {
@@ -257,8 +257,71 @@
     }
     /* Enhanced hover for the dark "Most Popular" card */
     #pricing .card[style*="background: #110D28"]:hover {
-         box-shadow: 0 16px 40px rgba(108, 79, 247, 0.3); /* A more vibrant shadow for the dark card on hover */
+        box-shadow: 0 16px 40px rgba(108, 79, 247, 0.3); /* A more vibrant shadow for the dark card on hover */
     }
+
+    /* New Services Section Styles */
+    #services {
+      background: linear-gradient(135deg, #110D28, #3b217d); /* Dark background similar to header */
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    #services .section-subtitle {
+      font-size: 20px;
+      margin-bottom: 60px; /* More space after subtitle */
+      color: rgba(255, 255, 255, 0.8);
+    }
+    #services .section-title {
+      color: white; /* Title color for this dark section */
+    }
+    #services .service-card {
+      background: rgba(255, 255, 255, 0.08); /* Slightly lighter transparent background for cards */
+      border-radius: 12px;
+      padding: 30px;
+      text-align: left; /* Align text left as per image */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden; /* Hide overflowing pseudo-elements if any */
+    }
+    #services .service-card::before { /* For abstract background pattern */
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(108, 79, 247, 0.1) 0%, transparent 50%, rgba(108, 79, 247, 0.1) 100%);
+        z-index: 0;
+        opacity: 0.5;
+    }
+    #services .service-card > * { /* Ensure content is above pseudo-element */
+        position: relative;
+        z-index: 1;
+    }
+    #services .service-card h4 {
+      font-size: 22px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #7C4DFF; /* Purple highlight for titles */
+    }
+    #services .service-card p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    #services .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(124, 77, 255, 0.4); /* Enhanced shadow on hover */
+    }
+    #services .bottom-cta {
+      margin-top: 80px;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+    }
+
 </style>
 </head>
 <body>
@@ -299,7 +362,41 @@
 <a href="#pricing">See Plans</a>
 <a href="https://calendly.com/growth-adtitudemedia" target="_blank">Book Strategy Call</a>
 </div>
-</header><section id="how" style="padding: 80px 20px;">
+</header>
+
+<section id="services">
+    <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Your Growth Partner in Performance & Brand Building</p>
+    <div class="grid">
+        <div class="service-card" data-aos="fade-up">
+            <h4>PERFORMANCE MARKETING</h4>
+            <p>Maximize ROI with data-driven Meta & Google Ads strategies that deliver measurable results.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <h4>MARKETPLACE & QUICK COMMERCE</h4>
+            <p>Dominate Amazon, Flipkart, Zepto, Swiggy, Zomato & Meesho with full-spectrum PPC, catalog management & seller operations.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <h4>AUTOMATION</h4>
+            <p>Streamline workflows with AI tools that reduce errors, save time, and optimize reporting.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <h4>SOCIAL MEDIA MARKETING</h4>
+            <p>Build community engagement and brand loyalty through platform-specific growth campaigns.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <h4>INFLUENCER MARKETING</h4>
+            <p>Streamline workflows with AI tools that reduce errors, save time, and optimize reporting.</p>
+        </div>
+        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+            <h4>BRAND BUILDING</h4>
+            <p>Craft compelling narratives that position your brand for long-term growth across digital channels.</p>
+        </div>
+    </div>
+    <p class="bottom-cta" data-aos="fade-up" data-aos-delay="600">Let's optimize your marketing and scale faster—connect today to grow smarter!</p>
+</section>
+
+<section id="how" style="padding: 80px 20px;">
 <section id="how" style="padding: 80px 20px;">
 <h2 class="section-title" data-aos="fade-up">How It Works</h2>
 <div class="timeline">
